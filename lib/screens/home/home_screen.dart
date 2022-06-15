@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:petchqapp/components/my_bottom_nav_bar.dart';
 import 'package:petchqapp/screens/home/components/body.dart';
+import 'package:petchqapp/screens/home/signin_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -15,14 +16,11 @@ class HomeScreen extends StatelessWidget {
 
   AppBar buildAppBar() {
     return AppBar(
+        automaticallyImplyLeading: false,
         elevation: 0,
-        leading: IconButton(
-          icon: SvgPicture.asset("assets/icons/menu.svg"),
-          color: Colors.white,
-          onPressed: () {
-            
-          },
-        ),
+        actions: [
+          icobutton(),
+        ],
         flexibleSpace: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
@@ -34,5 +32,25 @@ class HomeScreen extends StatelessWidget {
                 ]),
           ),
         ));
+  }
+}
+
+class icobutton extends StatelessWidget {
+  const icobutton({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      icon: SvgPicture.asset("assets/icons/power.svg", color: Colors.white),
+      onPressed: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => SignInScreen(),
+            ));
+      },
+    );
   }
 }

@@ -13,7 +13,9 @@ Image logoWidget(String imageName) {
 TextField resuableTextField(String text, IconData icon, bool isPasswordType,
     TextEditingController controller) {
   return TextField(
-    onChanged: (value) {},
+    onChanged: (value) {
+      
+    },
     controller: controller,
     obscureText: isPasswordType,
     enableSuggestions: !isPasswordType,

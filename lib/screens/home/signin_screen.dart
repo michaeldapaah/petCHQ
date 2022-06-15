@@ -47,14 +47,12 @@ class _SignInScreenState extends State<SignInScreen> {
                   height: 30,
                 ),
                 resuableTextField("Enter UserName", Icons.person_outline, false,
-                    _emailTextController) ,
+                    _emailTextController),
                 const SizedBox(
                   height: 20,
                 ),
-                resuableTextField("Enter Password",
-                 Icons.lock_outline, true,
+                resuableTextField("Enter Password", Icons.lock_outline, true,
                     _passwordTextController),
-                  
                 const SizedBox(
                   height: 20,
                 ),
@@ -65,7 +63,6 @@ class _SignInScreenState extends State<SignInScreen> {
                       MaterialPageRoute(
                         builder: (context) => HomeScreen(),
                       ));
-                      
                 }),
                 signUpOption()
               ],
