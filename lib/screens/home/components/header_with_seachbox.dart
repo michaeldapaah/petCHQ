@@ -22,7 +22,7 @@ class HeaderWithSearchBox extends StatelessWidget {
           Container(
             padding: EdgeInsets.only(
               left: 5 + kDefaultPadding,
-              right: kDefaultPadding,
+              right: -5 + kDefaultPadding,
               bottom: -15 + kDefaultPadding,
             ),
             height: size.height * 0.28 - 27,
@@ -47,8 +47,8 @@ class HeaderWithSearchBox extends StatelessWidget {
                       color: Colors.white, fontWeight: FontWeight.bold),
                 ),
                 Spacer(),
-                Image.asset("assets/images/logo.png",
-                    color: Colors.white70.withOpacity(0.8))
+                Image.asset("assets/images/pet.png",
+                    width: 70.0, height: 70.0, color: Colors.white)
               ],
             ),
           ),
