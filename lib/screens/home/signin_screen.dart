@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:petchqapp/components/auth.dart';
 import '../../utils/color_utils.dart';
 import '../details/components/reusuable_widgets/reusable_widgets.dart';
 import 'home_screen.dart';
@@ -14,6 +16,7 @@ class SignInScreen extends StatefulWidget {
 class _SignInScreenState extends State<SignInScreen> {
   final TextEditingController _passwordTextController = TextEditingController();
   final TextEditingController _emailTextController = TextEditingController();
+  final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,11 +61,24 @@ class _SignInScreenState extends State<SignInScreen> {
                 ),
                 signInSignUpButton(context, true, () {
                   //Navigator.pushNamed(context, '/second');
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => HomeScreen(),
-                      ));
+                  // Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //       builder: (context) => HomeScreen(),
+                  //     ));
+                  _auth
+                      .signup(
+                        _emailTextController.text,
+                        _passwordTextController.text,
+                      )
+                      .then(
+                        (value) => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomeScreen(),
+                          ),
+                        ),
+                      );
                 }),
                 signUpOption()
               ],

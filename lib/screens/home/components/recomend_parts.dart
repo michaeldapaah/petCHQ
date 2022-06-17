@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:petchqapp/screens/details/components/body.dart';
 import 'package:petchqapp/screens/details/details_screen.dart';
 
 import '../../../constants.dart';
@@ -47,7 +48,14 @@ class RecomendsParts extends StatelessWidget {
             title: "Large-Animal \n Vet. Specialist",
             name: "Dr. Dapaah",
             price: 440,
-            press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailsScreen(),
+                ),
+              );
+            },
           ),
         ],
       ),

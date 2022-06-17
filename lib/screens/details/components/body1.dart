@@ -1,13 +1,10 @@
-import 'package:agora_uikit/agora_uikit.dart';
 import 'package:flutter/material.dart';
 import 'package:petchqapp/constants.dart';
 
 import 'image_and_icons.dart';
 import 'title_and_price.dart';
 
-class Body extends StatelessWidget {
-  get client => null;
-
+class Body1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -29,12 +26,7 @@ class Body extends StatelessWidget {
                     ),
                   ),
                   color: Colors.purple,
-                  onPressed: () {
-                    AgoraVideoViewer(
-                      client: client,
-                    );
-                    AgoraVideoButtons(client: client);
-                  },
+                  onPressed: () {},
                   child: Text(
                     "Chat Now",
                     style: TextStyle(
